@@ -31,7 +31,7 @@ async function build() {
             
             // Use template for all other files
             const page = template
-                .replace('{{title}}', attributes.title || 'Untitled')
+                .replace(/{{title}}/g, attributes.title || 'Untitled')
                 .replace('{{content}}', html);
                 
             const outFile = file.replace('.md', '.html');

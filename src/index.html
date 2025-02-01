@@ -3,11 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{title}}</title>
+    <title>Welcome | Your Site Name</title>
     <link rel="stylesheet" href="/static/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="site-header">
@@ -26,20 +23,36 @@
         </div>
     </header>
 
-    <main>
+    <main class="container">
         <section class="hero">
             <div class="container">
-                <h1><span class="gradient-text">{{title}}</span></h1>
+                <h1>Welcome to<br><span class="gradient-text">My First Blog</span></h1>
+                <p>A simple, modern blog built with basic web technologies and a touch of style.</p>
             </div>
         </section>
 
         <section class="content">
             <div class="container">
-                <div class="post-card">
-                    {{content}}
+                <h2>Latest Posts</h2>
+                <div class="post-grid">
+                    <article class="post-card">
+                        <h3><a href="/blog/getting-started">Getting Started with Markdown</a></h3>
+                        <p>Learn how to write beautiful content using Markdown syntax.</p>
+                    </article>
+                    <article class="post-card">
+                        <h3><a href="/blog/simplicity">Why Simple is Better</a></h3>
+                        <p>Exploring the benefits of keeping your code and design simple.</p>
+                    </article>
                 </div>
             </div>
         </section>
+
+        <section class="stats">
+            <div class="container">
+                <h2>We've helped over <span class="gradient-text">6,000 people</span> learn how to build their own blogs!</h2>
+            </div>
+        </section>
+
     </main>
 
     <footer class="site-footer">
@@ -48,8 +61,6 @@
                 <p class="copyright">&copy; 2024 My First Blog. All rights reserved.</p>
                 <nav class="footer-nav">
                     <a href="/privacy">Privacy</a>
-                    <a href="/terms">Terms</a>
-                    <a href="/rss">RSS</a>
                 </nav>
             </div>
         </div>

@@ -10,6 +10,12 @@ async function build() {
     // Copy static assets
     await fs.copy('src/static', 'dist/static');
     
+    // Copy index.html directly if it exists
+    const indexPath = path.join('src', 'index.html');
+    if (await fs.pathExists(indexPath)) {
+        await fs.copy(indexPath, path.join('dist', 'index.html'));
+    }
+    
     // Read template
     const template = await fs.readFile('src/templates/base.html', 'utf-8');
     
@@ -23,6 +29,7 @@ async function build() {
             const { attributes, body } = frontMatter(content);
             const html = marked(body);
             
+            // Use template for all other files
             const page = template
                 .replace('{{title}}', attributes.title || 'Untitled')
                 .replace('{{content}}', html);

@@ -13,18 +13,14 @@
         <section class="hero">
             <div class="container">
                 <h1><span class="gradient-text">{{title}}</span></h1>
-                {{#if date}}
-                <div class="post-meta">
-                    {{date}} by {{author}}
-                </div>
-                {{/if}}
+                <p>{{description}}</p>
             </div>
         </section>
 
         <section class="content">
             <div class="container">
-                <div class="post-card">
-                    {{content}}
+                <div class="blog-grid">
+                    {{{blog_posts}}}
                 </div>
             </div>
         </section>
